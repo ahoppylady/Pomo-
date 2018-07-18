@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="auM-iN-XRB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listTaskTableViewCell" rowHeight="102" id="IL1-pZ-YAh" customClass="ListTaskTableViewCell" customModule="TodoMakeSchool" customModuleProvider="target">
@@ -63,6 +63,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="MFe-VR-hAF"/>
                     <navigationItem key="navigationItem" title="Task" id="Wnv-Wt-ki2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l3s-Yz-ieS">
                             <connections>
@@ -76,7 +77,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="127.83251231527095"/>
+            <point key="canvasLocation" x="1415.2" y="127.28635682158921"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dET-PE-BpZ">
+            <objects>
+                <viewController id="Cqi-Pa-PYh" customClass="ViewController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="td7-2F-hN2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="045-QP-CqA">
+                                <rect key="frame" x="164" y="298" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5Vz-0l-abv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4GQ-O1-kq2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SI2-dX-SKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="881"/>
         </scene>
         <!--Display Task View Controller-->
         <scene sceneID="MAQ-Tr-g7H">
@@ -148,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-X8-DGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288.8" y="126.38680659670166"/>
+            <point key="canvasLocation" x="2228" y="126.38680659670166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Us-08-qCq">
@@ -161,12 +185,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Glu-K5-DVn"/>
+                        <segue destination="W0L-Kn-ifH" kind="relationship" relationship="rootViewController" id="Glu-K5-DVn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoA-Lg-6Eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-340" y="126"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YsM-zw-t2w">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W0L-Kn-ifH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nFm-nA-V2e"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eTN-6Z-UvI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OEs-ka-V5G"/>
+                        <segue destination="Cqi-Pa-PYh" kind="relationship" relationship="viewControllers" id="i7j-2w-fxS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYT-py-vGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="127.28635682158921"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

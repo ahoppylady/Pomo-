@@ -37,7 +37,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.taskTitleLabel.text = task.name
         cell.taskDueDateLabel.text = task.dueDate.toString(dateFormat: "dd-MM-yyyy")
-        cell.taskCompleteButton.setTitle(task.isCompleted.description, for: .normal)
+        //cell.taskCompleteButton.setTitle(task.isCompleted.description, for: .normal)
         
         return cell
     }
