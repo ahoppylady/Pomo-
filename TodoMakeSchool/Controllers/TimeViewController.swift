@@ -13,14 +13,12 @@ class TimeViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     
-    var seconds = 1500
+    var seconds = 1500 //25 minutes
     var timerDisplay = String(format:"%02i:%02i:%02i", 00, 25, 00)
     var timer = Timer()
     
-    
     var isTimerRunning = false
     var resumeTapped = false
-    
     
     override func viewDidLoad() {
         

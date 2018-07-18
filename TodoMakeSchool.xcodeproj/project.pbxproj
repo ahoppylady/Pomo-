@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		402E20DD20F0047700F1E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E20DC20F0047700F1E823 /* AppDelegate.swift */; };
-		402E20DF20F0047700F1E823 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E20DE20F0047700F1E823 /* ViewController.swift */; };
 		402E20E220F0047700F1E823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402E20E020F0047700F1E823 /* Main.storyboard */; };
 		402E20E420F0047700F1E823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402E20E320F0047700F1E823 /* Assets.xcassets */; };
 		402E20E720F0047700F1E823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402E20E520F0047700F1E823 /* LaunchScreen.storyboard */; };
@@ -19,12 +18,13 @@
 		403D0C8D20F3CF5400FF171A /* DisplayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */; };
 		40965BCC20FED19A006AB314 /* PMSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCB20FED19A006AB314 /* PMSoundHelper.swift */; };
 		40965BCE20FED27A006AB314 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCD20FED27A006AB314 /* TimeViewController.swift */; };
+		40965BD020FF0645006AB314 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCF20FF0645006AB314 /* CategoryViewController.swift */; };
+		40965BD520FF0E03006AB314 /* PMCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BD420FF0E03006AB314 /* PMCoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		402E20D920F0047700F1E823 /* TodoMakeSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMakeSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		402E20DC20F0047700F1E823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		402E20DE20F0047700F1E823 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		402E20E120F0047700F1E823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		402E20E320F0047700F1E823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		402E20E620F0047700F1E823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTaskViewController.swift; sourceTree = "<group>"; };
 		40965BCB20FED19A006AB314 /* PMSoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMSoundHelper.swift; sourceTree = "<group>"; };
 		40965BCD20FED27A006AB314 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		40965BCF20FF0645006AB314 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		40965BD420FF0E03006AB314 /* PMCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMCoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,16 +70,16 @@
 		402E20DB20F0047700F1E823 /* TodoMakeSchool */ = {
 			isa = PBXGroup;
 			children = (
+				40965BD320FF0CBB006AB314 /* Extensions */,
+				40965BD220FF0C7D006AB314 /* Storyboards */,
+				40965BD120FF0C65006AB314 /* Supporting */,
 				40965BCA20FE9C20006AB314 /* Sound Files */,
 				40965BC920FE9BD8006AB314 /* Helpers */,
 				402E20F620F0123100F1E823 /* Views */,
 				402E20F320F00A2E00F1E823 /* Controllers */,
 				402E20EE20F005DD00F1E823 /* Model */,
 				402E20DC20F0047700F1E823 /* AppDelegate.swift */,
-				402E20DE20F0047700F1E823 /* ViewController.swift */,
-				402E20E020F0047700F1E823 /* Main.storyboard */,
 				402E20E320F0047700F1E823 /* Assets.xcassets */,
-				402E20E520F0047700F1E823 /* LaunchScreen.storyboard */,
 				402E20E820F0047700F1E823 /* Info.plist */,
 			);
 			path = TodoMakeSchool;
@@ -98,6 +100,7 @@
 				402E20F420F00A9C00F1E823 /* TasksTableController.swift */,
 				403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */,
 				40965BCD20FED27A006AB314 /* TimeViewController.swift */,
+				40965BCF20FF0645006AB314 /* CategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +116,7 @@
 		40965BC920FE9BD8006AB314 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				40965BD420FF0E03006AB314 /* PMCoreDataHelper.swift */,
 				40965BCB20FED19A006AB314 /* PMSoundHelper.swift */,
 			);
 			path = Helpers;
@@ -123,6 +127,29 @@
 			children = (
 			);
 			path = "Sound Files";
+			sourceTree = "<group>";
+		};
+		40965BD120FF0C65006AB314 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		40965BD220FF0C7D006AB314 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				402E20E020F0047700F1E823 /* Main.storyboard */,
+				402E20E520F0047700F1E823 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		40965BD320FF0CBB006AB314 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402E20DF20F0047700F1E823 /* ViewController.swift in Sources */,
+				40965BD520FF0E03006AB314 /* PMCoreDataHelper.swift in Sources */,
+				40965BD020FF0645006AB314 /* CategoryViewController.swift in Sources */,
 				402E20F520F00A9C00F1E823 /* TasksTableController.swift in Sources */,
 				402E20F820F012C200F1E823 /* ListTaskTableViewCell.swift in Sources */,
 				402E20F020F005F600F1E823 /* Task.swift in Sources */,
