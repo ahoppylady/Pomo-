@@ -17,6 +17,8 @@
 		402E20F520F00A9C00F1E823 /* TasksTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E20F420F00A9C00F1E823 /* TasksTableController.swift */; };
 		402E20F820F012C200F1E823 /* ListTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E20F720F012C200F1E823 /* ListTaskTableViewCell.swift */; };
 		403D0C8D20F3CF5400FF171A /* DisplayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */; };
+		40965BCC20FED19A006AB314 /* PMSoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCB20FED19A006AB314 /* PMSoundHelper.swift */; };
+		40965BCE20FED27A006AB314 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCD20FED27A006AB314 /* TimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		402E20F420F00A9C00F1E823 /* TasksTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableController.swift; sourceTree = "<group>"; };
 		402E20F720F012C200F1E823 /* ListTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskTableViewCell.swift; sourceTree = "<group>"; };
 		403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTaskViewController.swift; sourceTree = "<group>"; };
+		40965BCB20FED19A006AB314 /* PMSoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMSoundHelper.swift; sourceTree = "<group>"; };
+		40965BCD20FED27A006AB314 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 		402E20DB20F0047700F1E823 /* TodoMakeSchool */ = {
 			isa = PBXGroup;
 			children = (
+				40965BCA20FE9C20006AB314 /* Sound Files */,
+				40965BC920FE9BD8006AB314 /* Helpers */,
 				402E20F620F0123100F1E823 /* Views */,
 				402E20F320F00A2E00F1E823 /* Controllers */,
 				402E20EE20F005DD00F1E823 /* Model */,
@@ -91,6 +97,7 @@
 			children = (
 				402E20F420F00A9C00F1E823 /* TasksTableController.swift */,
 				403D0C8C20F3CF5400FF171A /* DisplayTaskViewController.swift */,
+				40965BCD20FED27A006AB314 /* TimeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +108,21 @@
 				402E20F720F012C200F1E823 /* ListTaskTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		40965BC920FE9BD8006AB314 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				40965BCB20FED19A006AB314 /* PMSoundHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		40965BCA20FE9C20006AB314 /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Sound Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +201,10 @@
 				402E20F520F00A9C00F1E823 /* TasksTableController.swift in Sources */,
 				402E20F820F012C200F1E823 /* ListTaskTableViewCell.swift in Sources */,
 				402E20F020F005F600F1E823 /* Task.swift in Sources */,
+				40965BCC20FED19A006AB314 /* PMSoundHelper.swift in Sources */,
 				402E20DD20F0047700F1E823 /* AppDelegate.swift in Sources */,
 				402E20F220F0068200F1E823 /* Category.swift in Sources */,
+				40965BCE20FED27A006AB314 /* TimeViewController.swift in Sources */,
 				403D0C8D20F3CF5400FF171A /* DisplayTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
