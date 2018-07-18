@@ -1,21 +1,16 @@
 //
-//  CategoryViewController.swift
+//  addStuff.swift
 //  TodoMakeSchool
 //
-//  Created by William Fernandes on 7/17/18.
+//  Created by Sneha Pankaj on 7/18/18.
 //  Copyright © 2018 William Fernandes. All rights reserved.
 //
-
+/*
+import Foundation
 import UIKit
-import AVFoundation
-
-class CategoryViewController: UIViewController {
+class addStuff {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        addCategory()
-    }
-    func addCategory(){
+   func addStuff(){
         /****Programatically add button to "Add/Create Task" [Begin]****/
         
         var addTaskButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.maxX - 75, y: self.view.frame.size.height - 140), size: CGSize(width: 50, height: 50)))
@@ -33,4 +28,4 @@ class CategoryViewController: UIViewController {
         //insert segue to DisplayTaskViewController
         print("Add Category Tapped")
     }
-}
+}*/

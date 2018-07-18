@@ -20,6 +20,7 @@
 		40965BCE20FED27A006AB314 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCD20FED27A006AB314 /* TimeViewController.swift */; };
 		40965BD020FF0645006AB314 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BCF20FF0645006AB314 /* CategoryViewController.swift */; };
 		40965BD520FF0E03006AB314 /* PMCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40965BD420FF0E03006AB314 /* PMCoreDataHelper.swift */; };
+		78AC4EF020FFEF2000D4CE97 /* addStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AC4EEF20FFEF2000D4CE97 /* addStuff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		40965BCD20FED27A006AB314 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		40965BCF20FF0645006AB314 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		40965BD420FF0E03006AB314 /* PMCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMCoreDataHelper.swift; sourceTree = "<group>"; };
+		78AC4EEF20FFEF2000D4CE97 /* addStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = addStuff.swift; path = TodoMakeSchool/Controllers/addStuff.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		40965BD120FF0C65006AB314 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				78AC4EEF20FFEF2000D4CE97 /* addStuff.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78AC4EF020FFEF2000D4CE97 /* addStuff.swift in Sources */,
 				40965BD520FF0E03006AB314 /* PMCoreDataHelper.swift in Sources */,
 				40965BD020FF0645006AB314 /* CategoryViewController.swift in Sources */,
 				402E20F520F00A9C00F1E823 /* TasksTableController.swift in Sources */,

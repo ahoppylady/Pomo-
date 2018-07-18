@@ -167,6 +167,9 @@
                                     <segment title="Medium"/>
                                     <segment title="Low"/>
                                 </segments>
+                                <connections>
+                                    <action selector="proritySelected:" destination="2QY-Tn-BYU" eventType="valueChanged" id="IiX-9Z-TBg"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-wd-AnV">
                                 <rect key="frame" x="16" y="317" width="99" height="21"/>
@@ -181,6 +184,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="552602937.35161996">
                                     <!--2018-07-06 20:48:57 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dueDatePicked:" destination="2QY-Tn-BYU" eventType="valueChanged" id="yzr-dB-xCc"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akR-Tz-CeX">
                                 <rect key="frame" x="16" y="499" width="71" height="21"/>
@@ -200,10 +206,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-Tg-4oj">
+                                <rect key="frame" x="305" y="94" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="taskSaveButtonTapped:" destination="2QY-Tn-BYU" eventType="touchUpInside" id="aw6-Vw-5kr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="D2A-ll-kbz"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryPicker" destination="9KD-Hg-YMh" id="RhW-jR-DK8"/>
+                        <outlet property="taskTitleText" destination="L2d-f8-Wcf" id="QNg-Wd-pXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-X8-DGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -232,13 +259,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W0L-Kn-ifH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="nFm-nA-V2e">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="l3s-Yz-ieS">
-                            <connections>
-                                <segue destination="2QY-Tn-BYU" kind="show" identifier="newTask" id="pnR-ux-d8j"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="nFm-nA-V2e"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eTN-6Z-UvI">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -255,7 +276,4 @@
             <point key="canvasLocation" x="476" y="127.28635682158921"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QOX-QS-VUp"/>
-    </inferredMetricsTieBreakers>
 </document>
