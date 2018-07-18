@@ -40,7 +40,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="taskTitleLabel" destination="rjO-8B-Tjt" id="fV3-yW-cNP"/>
-                                            <segue destination="2QY-Tn-BYU" kind="show" identifier="showTask" id="QOX-QS-VUp"/>
+                                            <segue destination="yhw-W5-bh8" kind="show" identifier="startPomo" id="eI2-Vq-930"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -55,7 +55,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Task" id="MFe-VR-hAF"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="MFe-VR-hAF">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Task" id="Wnv-Wt-ki2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -91,13 +93,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:30:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn5-rN-0XC">
-                                <rect key="frame" x="79" y="149" width="217" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-P6-Q4c">
                                 <rect key="frame" x="62" y="553" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,6 +117,21 @@
                                     <action selector="pauseButtonTapped:" destination="yhw-W5-bh8" eventType="touchUpInside" id="jsW-zc-7jF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-kq-7eI">
+                                <rect key="frame" x="42" y="130" width="282" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:25:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn5-rN-0XC">
+                                <rect key="frame" x="42" y="245" width="290" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SQx-Mi-H9x"/>
@@ -130,6 +140,7 @@
                     <connections>
                         <outlet property="pauseButton" destination="bDq-fg-cJS" id="oRM-UL-UeC"/>
                         <outlet property="startButton" destination="lWe-P6-Q4c" id="c4k-UI-jqG"/>
+                        <outlet property="taskNameLabel" destination="UKO-kq-7eI" id="xNE-Wk-HLv"/>
                         <outlet property="timerLabel" destination="Wn5-rN-0XC" id="Xt5-qN-mhr"/>
                     </connections>
                 </viewController>
@@ -255,7 +266,10 @@
             <point key="canvasLocation" x="476" y="127.28635682158921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QOX-QS-VUp"/>
+        <segue reference="eI2-Vq-930"/>
     </inferredMetricsTieBreakers>
 </document>

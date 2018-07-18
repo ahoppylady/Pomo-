@@ -15,4 +15,7 @@ struct Task {
     var dueDate: Date
     var isCompleted: Bool = false
     var category: Category?
+    var pomoCount: Int
+    
+    
 }

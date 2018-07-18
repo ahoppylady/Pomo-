@@ -12,13 +12,17 @@ class TimeViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var taskNameLabel: UILabel!
     
-    var seconds = 1500 //25 minutes
+    var task: Task?
+    
+    var seconds = 10 //25 minutes
     var timerDisplay = String(format:"%02i:%02i:%02i", 00, 25, 00)
     var timer = Timer()
     
     var isTimerRunning = false
     var resumeTapped = false
+    var isBreakTime = false
     
     override func viewDidLoad() {
         
@@ -26,6 +30,7 @@ class TimeViewController: UIViewController {
         pauseButton.isEnabled = false
         
         timerLabel.text = timerDisplay
+        taskNameLabel.text = task?.name
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -39,6 +44,7 @@ class TimeViewController: UIViewController {
     func runTimer() {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(TimeViewController.updateTimer)), userInfo: nil, repeats: true)
+
         isTimerRunning = true
         pauseButton.isEnabled = true
     }
@@ -60,8 +66,9 @@ class TimeViewController: UIViewController {
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         timer.invalidate()
-        seconds = 1500
-        timerLabel.text = timeString(time: TimeInterval(seconds))
+        //seconds = 1500
+        //timerLabel.text = timeString(time: TimeInterval(seconds))
+        pomoSetup()
         isTimerRunning = false
         pauseButton.isEnabled = false
         startButton.isEnabled = true
@@ -70,8 +77,21 @@ class TimeViewController: UIViewController {
     @objc func updateTimer() {
         
         if seconds < 1 {
-            timer.invalidate()
+            
             PMSoundHelper.playSound(soundFile: "alarm")
+            
+            if !isBreakTime {
+                
+                breakSetup()
+                
+                task?.pomoCount += 1
+
+            } else {
+
+                pomoSetup()
+            }
+            
+            timer.invalidate()
             
         } else {
             seconds -= 1
@@ -87,6 +107,24 @@ class TimeViewController: UIViewController {
         let seconds = Int(time) % 60
         
         return String(format:"%02i:%02i:%02i", 00, minutes, seconds)
+    }
+    
+    func pomoSetup(){
+        seconds = 1500
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        isBreakTime = false
+    }
+    
+    func breakSetup(){
+        seconds = 300
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        isBreakTime = true
+    }
+    
+    func longBreakSetup(){
+        seconds = 900
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        isBreakTime = true
     }
     
 }
