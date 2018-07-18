@@ -7,7 +7,7 @@
 import UIKit
 import AVFoundation
 
-class PMSoundsHelper {
+class PMSoundHelper {
     
     static var audioPlayer : AVAudioPlayer!
     static var player = AVAudioPlayer()
