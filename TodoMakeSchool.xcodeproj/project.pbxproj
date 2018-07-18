@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4008F61120FFB01200FF5275 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008F61020FFB01100FF5275 /* Storyboard+Utility.swift */; };
+		4008F61320FFFD5B00FF5275 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4008F61220FFFD5900FF5275 /* alarm.mp3 */; };
 		402E20DD20F0047700F1E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E20DC20F0047700F1E823 /* AppDelegate.swift */; };
 		402E20E220F0047700F1E823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402E20E020F0047700F1E823 /* Main.storyboard */; };
 		402E20E420F0047700F1E823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402E20E320F0047700F1E823 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4008F61020FFB01100FF5275 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		4008F61220FFFD5900FF5275 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		402E20D920F0047700F1E823 /* TodoMakeSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoMakeSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		402E20DC20F0047700F1E823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		402E20E120F0047700F1E823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		40965BCA20FE9C20006AB314 /* Sound Files */ = {
 			isa = PBXGroup;
 			children = (
+				4008F61220FFFD5900FF5275 /* alarm.mp3 */,
 			);
 			path = "Sound Files";
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 		40965BD320FF0CBB006AB314 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4008F61020FFB01100FF5275 /* Storyboard+Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4008F61320FFFD5B00FF5275 /* alarm.mp3 in Resources */,
 				402E20E720F0047700F1E823 /* LaunchScreen.storyboard in Resources */,
 				402E20E420F0047700F1E823 /* Assets.xcassets in Resources */,
 				402E20E220F0047700F1E823 /* Main.storyboard in Resources */,
@@ -233,6 +240,7 @@
 				402E20F520F00A9C00F1E823 /* TasksTableController.swift in Sources */,
 				402E20F820F012C200F1E823 /* ListTaskTableViewCell.swift in Sources */,
 				402E20F020F005F600F1E823 /* Task.swift in Sources */,
+				4008F61120FFB01200FF5275 /* Storyboard+Utility.swift in Sources */,
 				40965BCC20FED19A006AB314 /* PMSoundHelper.swift in Sources */,
 				402E20DD20F0047700F1E823 /* AppDelegate.swift in Sources */,
 				402E20F220F0068200F1E823 /* Category.swift in Sources */,

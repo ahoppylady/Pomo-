@@ -11,7 +11,7 @@ import UIKit
 class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tasks: [Task] = []
-    
+
     @IBOutlet weak var taskTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         taskTableView.dataSource = self
         
         for index in 1...3 {
-            tasks.append( Task(name: "Tarefa \(index)", createdDate: Date(), priority: index, dueDate: Date(), isCompleted: false, category: nil) )
+            tasks.append( Task(name: "Tarefa \(index)", createdDate: Date(), priority: index, dueDate: Date(), isCompleted: false, category: nil, pomoCount: 0) )
             
         }
         /****Programatically add button to "Add/Create Task" [Begin]****/
@@ -57,14 +57,26 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return cell
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
             
-        case "showTask":
-            print("show note bar button item tapped")
-
+        case "startPomo":
+            
+            if segue.destination is TimeViewController {
+                
+                let selectedIndex = taskTableView.indexPathForSelectedRow
+                guard let index = selectedIndex?.row else {return}
+                let selectedTask = tasks[index]
+                
+                let tvc =  segue.destination as? TimeViewController
+                tvc?.task = selectedTask
+            }
+            
         case "addTask":
             print("create task bar button item tapped")
             
