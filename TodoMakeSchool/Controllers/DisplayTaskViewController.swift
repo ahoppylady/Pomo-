@@ -25,7 +25,7 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.categoryPicker.dataSource = self
         
         //initializing array of categories
-        categoryPickerData = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6"]
+        categoryPickerData = ["Home", "Work", "School", "Travel", "Self Care"]
         
         // hide back button
         //self.navigationItem.setHidesBackButton(true, animated:true)
@@ -56,7 +56,7 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
      
         print("prepare segue")
         if segue.identifier == "back2" {
-            let task = Task(name: "Sneha")
+            let task = Task(name: taskTitleText.text!)
             let destination = segue.destination as! TasksTableController
             destination.tasks.append(task)
         }

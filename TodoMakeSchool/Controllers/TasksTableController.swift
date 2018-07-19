@@ -25,7 +25,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         taskTableView.dataSource = self
         
         for index in 1...3 {
-            tasks.append( Task(name: "Tarefa \(index)") )
+            tasks.append( Task(name: "Task \(index)") )
             //tasks.append( Task(name: "Tarefa \(index)", createdDate: Date(), priority: index, dueDate: Date(), isCompleted: false, category: nil, pomoCount: 0) )
             
         }
