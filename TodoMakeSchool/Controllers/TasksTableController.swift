@@ -10,8 +10,12 @@ import UIKit
 
 class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tasks: [Task] = []
-
+    var tasks: [Task] = []{
+        didSet{
+            taskTableView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var taskTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,32 +25,24 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         taskTableView.dataSource = self
         
         for index in 1...3 {
-            tasks.append( Task(name: "Tarefa \(index)", createdDate: Date(), priority: index, dueDate: Date(), isCompleted: false, category: nil, pomoCount: 0) )
+            tasks.append( Task(name: "Tarefa \(index)") )
+            //tasks.append( Task(name: "Tarefa \(index)", createdDate: Date(), priority: index, dueDate: Date(), isCompleted: false, category: nil, pomoCount: 0) )
             
         }
         /****Programatically add button to "Add/Create Task" [Begin]****/
-        //addStuff()
         var addTaskButton = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.maxX - 75, y: self.view.frame.size.height - 140), size: CGSize(width: 50, height: 50)))
         addTaskButton.setTitle("+", for: .normal)
         addTaskButton.backgroundColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0)
         addTaskButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 45)
         //adding action to the button
         addTaskButton.addTarget(self, action: #selector(addTaskClicked(_ :)), for: .touchUpInside)
-
         self.view.addSubview(addTaskButton)
-
         /****Programatically add button to "Add/Create Task" [End]****/
     }
     @objc func addTaskClicked(_ :UIButton){
         //insert segue to DisplayTaskViewController
         print("Add Task Tapped")
         self.performSegue(withIdentifier: "yves", sender: nil)
-        
-      //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let aVC = storyboard.instantiateViewController(withIdentifier: "displayTask") as? DisplayTaskViewController
-//        aVC?.modalPresentationStyle = UIModalPresentationStyle.custom
-//        self.present(aVC!, animated: true, completion: nil)
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,8 +80,15 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
                 tvc?.task = selectedTask
             }
             
-        case "addTask":
-            print("create task bar button item tapped")
+        case "yves":
+        
+                let selectedIndex = taskTableView.indexPathForSelectedRow
+                guard let index = selectedIndex?.row else {return}
+                let selectedTask = tasks[index]
+                let dvc = segue.destination as? DisplayTaskViewController
+                dvc?.task = selectedTask
+            
+            
             
         default:
             print("unexpected segue identifier")
@@ -94,6 +97,24 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         
+    }
+    /***************Deleting and Editing a task *****************/
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // delete item at indexPath
+            self.tasks.remove(at: indexPath.row)
+        }
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            // edit item at indexPath
+            let taskSelected = self.tasks[indexPath.row]
+            
+        }
+        
+        edit.backgroundColor = UIColor.blue
+        
+        return [delete, edit]
     }
 }
 

@@ -10,12 +10,15 @@ import Foundation
 
 struct Task {
     var name: String
-    var createdDate: Date
-    var priority: Int
-    var dueDate: Date
+    var createdDate: Date?
+    var priority: Int?
+    var dueDate: Date?
     var isCompleted: Bool = false
     var category: Category?
-    var pomoCount: Int
+    var pomoCount: Int = 0
     
+    init(name: String) {
+        self.name = name
+    }
     
 }

@@ -237,6 +237,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="taskSaveButtonTapped:" destination="2QY-Tn-BYU" eventType="touchUpInside" id="aw6-Vw-5kr"/>
+                                    <segue destination="2DT-1o-fEt" kind="unwind" identifier="back2" unwindAction="unwindWithSegue:" id="HKN-Wf-MgZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -246,9 +247,11 @@
                     <connections>
                         <outlet property="categoryPicker" destination="9KD-Hg-YMh" id="RhW-jR-DK8"/>
                         <outlet property="taskTitleText" destination="L2d-f8-Wcf" id="QNg-Wd-pXe"/>
+                        <segue destination="2DT-1o-fEt" kind="unwind" identifier="back" unwindAction="unwindWithSegue:" id="E6s-4d-cB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-X8-DGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2DT-1o-fEt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2228" y="126.38680659670166"/>
         </scene>
