@@ -9,7 +9,7 @@
 import UIKit
 
 class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    var task: Task?
     @IBOutlet weak var taskTitleText: UITextField!
     @IBAction func proritySelected(_ sender: UISegmentedControl) {
     }
@@ -18,16 +18,18 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        taskTitleText.text = task?.name
         
         //connect data
         self.categoryPicker.delegate = self
         self.categoryPicker.dataSource = self
         
         //initializing array of categories
-        categoryPickerData = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6"]
+        categoryPickerData = ["Home", "Work", "School", "Travel", "Self Care"]
         
         // hide back button
         //self.navigationItem.setHidesBackButton(true, animated:true)
+
         self.navigationItem.backBarButtonItem?.title = "Tasks"
     }
     
@@ -52,10 +54,29 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     /**********Picker View Code [End]********/
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+        print("prepare segue")
+        if segue.identifier == "back2" {
+            let task = Task(name: taskTitleText.text!)
+            let destination = segue.destination as! TasksTableController
+            destination.tasks.append(task)
+        }
+    }
     
     @IBAction func taskSaveButtonTapped(_ sender: Any) {
-    //add coreData elements to perform save activity
-        navigationController?.popViewController(animated: true)
+    
+        print("button")
+        //add coreData elements to perform save activity
+        //let task = Task(name: "Sneha")
+        //let destination = segue.destination as! TasksTableController
+        
+        //destination.tasks.append(task)
+//        let a = self.navigationController?.viewControllers.last as! TasksTableController
+//        var array = a.tasks
+//        print("\(array)")
+//        array.append(task)
+//          print("\(array)")
+//        navigationController?.popViewController(animated: true)
     }
 }
