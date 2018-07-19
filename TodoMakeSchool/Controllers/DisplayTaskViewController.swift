@@ -27,7 +27,8 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         categoryPickerData = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6"]
         
         // hide back button
-        self.navigationItem.setHidesBackButton(true, animated:true)
+        //self.navigationItem.setHidesBackButton(true, animated:true)
+        self.navigationItem.backBarButtonItem?.title = "Tasks"
     }
     
     override func viewWillAppear(_ animated: Bool) {

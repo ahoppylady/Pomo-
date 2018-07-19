@@ -27,6 +27,7 @@ class TimeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        setupViews()
         pauseButton.isEnabled = false
         
         timerLabel.text = timerDisplay
@@ -127,4 +128,8 @@ class TimeViewController: UIViewController {
         isBreakTime = true
     }
     
+    func setupViews() {
+        taskNameLabel.layer.cornerRadius = 8
+        taskNameLabel.layer.masksToBounds = true
+    }
 }

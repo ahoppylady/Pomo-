@@ -40,13 +40,8 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func addTaskClicked(_ :UIButton){
         //insert segue to DisplayTaskViewController
         print("Add Task Tapped")
-        self.performSegue(withIdentifier: "yves", sender: nil)
         
-      //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let aVC = storyboard.instantiateViewController(withIdentifier: "displayTask") as? DisplayTaskViewController
-//        aVC?.modalPresentationStyle = UIModalPresentationStyle.custom
-//        self.present(aVC!, animated: true, completion: nil)
-
+        self.performSegue(withIdentifier: "yves", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +62,9 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let backItem = UIBarButtonItem()
+//        backItem.title = "Tasks"
+//        navigationItem.backBarButtonItem = backItem
         
         guard let identifier = segue.identifier else { return }
         
