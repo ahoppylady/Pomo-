@@ -40,6 +40,11 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func addTaskClicked(_ :UIButton){
         //insert segue to DisplayTaskViewController
         print("Add Task Tapped")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let aVC = storyboard.instantiateViewController(withIdentifier: "displayTask") as? DisplayTaskViewController
+        aVC?.modalPresentationStyle = UIModalPresentationStyle.custom
+        self.present(aVC!, animated: true, completion: nil)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
