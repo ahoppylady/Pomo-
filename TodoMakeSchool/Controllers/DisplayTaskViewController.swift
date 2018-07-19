@@ -26,6 +26,8 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //initializing array of categories
         categoryPickerData = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6"]
         
+        // hide back button
+        self.navigationItem.setHidesBackButton(true, animated:true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +55,6 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBAction func taskSaveButtonTapped(_ sender: Any) {
     //add coreData elements to perform save activity
-
+        navigationController?.popViewController(animated: true)
     }
 }

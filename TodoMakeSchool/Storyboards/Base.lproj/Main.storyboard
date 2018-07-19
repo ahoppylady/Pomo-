@@ -63,13 +63,14 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="taskTableView" destination="auM-iN-XRB" id="CUG-li-Jbl"/>
+                        <segue destination="2QY-Tn-BYU" kind="show" identifier="yves" id="BrL-Gc-Bqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1415.2" y="127.28635682158921"/>
         </scene>
-        <!--Category-->
+        <!--Category View Controller-->
         <scene sceneID="dET-PE-BpZ">
             <objects>
                 <viewController id="Cqi-Pa-PYh" customClass="CategoryViewController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,13 +80,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Vz-0l-abv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Category" id="4GQ-O1-kq2"/>
+                    <tabBarItem key="tabBarItem" title="" image="Categories" id="4GQ-O1-kq2">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SI2-dX-SKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-95" y="899"/>
         </scene>
-        <!--Timer-->
+        <!--Time View Controller-->
         <scene sceneID="qJ5-rU-xyF">
             <objects>
                 <viewController id="yhw-W5-bh8" customClass="TimeViewController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +139,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SQx-Mi-H9x"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" id="YQg-Nj-GLo"/>
+                    <tabBarItem key="tabBarItem" title="" image="Start" id="YQg-Nj-GLo">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="pauseButton" destination="bDq-fg-cJS" id="oRM-UL-UeC"/>
                         <outlet property="startButton" destination="lWe-P6-Q4c" id="c4k-UI-jqG"/>
@@ -275,6 +280,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.2666666667" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OEs-ka-V5G"/>
@@ -288,7 +294,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Categories" width="24" height="24"/>
         <image name="Home" width="24" height="24"/>
+        <image name="Start" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eI2-Vq-930"/>
