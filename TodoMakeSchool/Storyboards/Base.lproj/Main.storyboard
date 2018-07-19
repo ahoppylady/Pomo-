@@ -151,7 +151,7 @@
         <!--Display Task View Controller-->
         <scene sceneID="MAQ-Tr-g7H">
             <objects>
-                <viewController id="2QY-Tn-BYU" customClass="DisplayTaskViewController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="displayTask" id="2QY-Tn-BYU" customClass="DisplayTaskViewController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Trg-jG-64Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
