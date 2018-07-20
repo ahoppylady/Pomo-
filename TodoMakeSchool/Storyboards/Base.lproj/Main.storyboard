@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tasks-->
+        <!--Tasks Table Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TasksTableController" customModule="TodoMakeSchool" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,10 +33,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Name" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjO-8B-Tjt">
-                                                    <rect key="frame" x="15" y="11" width="85" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="85" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.26666666666666666" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -64,7 +64,7 @@
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Tasks" id="Wnv-Wt-ki2"/>
+                    <navigationItem key="navigationItem" id="Wnv-Wt-ki2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="taskTableView" destination="auM-iN-XRB" id="CUG-li-Jbl"/>
@@ -190,13 +190,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-Tg-4oj">
-                                <rect key="frame" x="316" y="98" width="44" height="57"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qy-Tg-4oj">
+                                <rect key="frame" x="312" y="98" width="48" height="67"/>
                                 <color key="backgroundColor" red="1" green="0.2666666667" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="qFG-SO-S79"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="qFG-SO-S79"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="tintColor" red="1" green="0.2666666667" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -211,7 +212,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-nP-qlY">
-                                <rect key="frame" x="15" y="138" width="345" height="63"/>
+                                <rect key="frame" x="15" y="138" width="345" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-nE-yFp">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="23"/>
@@ -219,8 +220,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-f8-Wcf">
-                                        <rect key="frame" x="0.0" y="33" width="345" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Untitled" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-f8-Wcf">
+                                        <rect key="frame" x="0.0" y="33" width="345" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OWT-uT-Bsc"/>
+                                        </constraints>
                                         <color key="textColor" red="1" green="0.26622944440000001" blue="0.31974757700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -233,7 +237,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-rg-g8p">
-                                <rect key="frame" x="15" y="221" width="345" height="170"/>
+                                <rect key="frame" x="15" y="231" width="345" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCG-1T-Z55">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="23"/>
@@ -242,7 +246,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-XF-QRL">
-                                        <rect key="frame" x="0.0" y="33" width="345" height="138"/>
+                                        <rect key="frame" x="0.0" y="33" width="345" height="128"/>
                                         <segments>
                                             <segment title="High"/>
                                             <segment title="Medium"/>
@@ -339,6 +343,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryPicker" destination="9KD-Hg-YMh" id="RhW-jR-DK8"/>
+                        <outlet property="saveButton" destination="8qy-Tg-4oj" id="aE0-CK-00g"/>
                         <outlet property="taskTitleText" destination="L2d-f8-Wcf" id="QNg-Wd-pXe"/>
                         <segue destination="2DT-1o-fEt" kind="unwind" identifier="back" unwindAction="unwindWithSegue:" id="E6s-4d-cB9"/>
                     </connections>
@@ -366,12 +371,12 @@
             </objects>
             <point key="canvasLocation" x="-340" y="126"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tasks-->
         <scene sceneID="YsM-zw-t2w">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W0L-Kn-ifH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="nFm-nA-V2e"/>
+                    <navigationItem key="navigationItem" title="Tasks" largeTitleDisplayMode="always" id="nFm-nA-V2e"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eTN-6Z-UvI">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

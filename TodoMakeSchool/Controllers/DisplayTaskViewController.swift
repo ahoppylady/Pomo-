@@ -8,9 +8,10 @@
 
 import UIKit
 
-class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     var task: Task?
     @IBOutlet weak var taskTitleText: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     @IBAction func proritySelected(_ sender: UISegmentedControl) {
     }
     @IBAction func dueDatePicked(_ sender: Any) {
@@ -18,6 +19,10 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        taskTitleText.delegate = self
+        saveButton.isEnabled = false
+         saveButton.backgroundColor = UIColor.gray
+        saveButton.tintColor = UIColor.gray
         
         if let task = task {
             
@@ -81,7 +86,9 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
         case "saveTask" where task == nil:
             
+            
             let task = Task(name: taskTitleText.text!)
+            
             destination.tasks.append(task)
             
         default:
@@ -103,5 +110,17 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //        array.append(task)
         //          print("\(array)")
         //        navigationController?.popViewController(animated: true)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if (textField.text?.isEmpty)!{
+            self.saveButton.isEnabled = false
+            saveButton.backgroundColor = UIColor.gray
+            saveButton.tintColor = UIColor.gray
+        }
+        else{
+            self.saveButton.isEnabled = true
+             saveButton.backgroundColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0)
+            saveButton.tintColor = UIColor(red:1.00, green:0.27, blue:0.32, alpha:1.0)
+        }
     }
 }

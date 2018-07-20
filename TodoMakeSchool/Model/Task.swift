@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Task {
+class Task {
     var name: String
     var createdDate: Date?
     var priority: Int?
