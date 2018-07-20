@@ -281,7 +281,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="taskSaveButtonTapped:" destination="2QY-Tn-BYU" eventType="touchUpInside" id="aw6-Vw-5kr"/>
-                                    <segue destination="2DT-1o-fEt" kind="unwind" identifier="back2" unwindAction="unwindWithSegue:" id="HKN-Wf-MgZ"/>
+                                    <segue destination="2DT-1o-fEt" kind="unwind" identifier="saveTask" unwindAction="unwindWithSegue:" id="HKN-Wf-MgZ"/>
                                 </connections>
                             </button>
                         </subviews>

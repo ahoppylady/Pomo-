@@ -42,7 +42,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func addTaskClicked(_ :UIButton){
         //insert segue to DisplayTaskViewController
         print("Add Task Tapped")
-
+        
         self.performSegue(withIdentifier: "yves", sender: nil)
     }
     
@@ -51,29 +51,25 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "listTaskTableViewCell") as! ListTaskTableViewCell
-        
         let task = tasks[indexPath.row]
-        
         cell.taskTitleLabel.text = task.name
-        //cell.taskDueDateLabel.text = task.dueDate.toString(dateFormat: "dd-MM-yyyy")
-        //cell.taskCompleteButton.setTitle(task.isCompleted.description, for: .normal)
-        
         return cell
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let backItem = UIBarButtonItem()
-//        backItem.title = "Tasks"
-//        navigationItem.backBarButtonItem = backItem
+        //        let backItem = UIBarButtonItem()
+        //        backItem.title = "Tasks"
+        //        navigationItem.backBarButtonItem = backItem
         
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-                
+            
         case "startPomo":
-
+            
             if segue.destination is TimeViewController {
                 
                 let selectedIndex = taskTableView.indexPathForSelectedRow
@@ -85,16 +81,10 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
         case "yves":
-        
-//                let selectedIndex = taskTableView.indexPathForSelectedRow
-//                guard let index = selectedIndex?.row else {return}
-//                let selectedTask = tasks[index]
-//                let dvc = segue.destination as? DisplayTaskViewController
-//                dvc?.task = selectedTask
-            guard let object = sender as? Task else { return }
-            let dvc = segue.destination as! DisplayTaskViewController
-            dvc.task = object
             
+            guard let task = sender as? Task else { return }
+            let dvc = segue.destination as! DisplayTaskViewController
+            dvc.task = task
             
         default:
             print("unexpected segue identifier")
@@ -105,7 +95,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     /***************Deleting and Editing a task *****************/
-
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             // delete item at indexPath

@@ -74,18 +74,15 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         switch identifier {
             
-        case "back2" where task != nil:
+        case "saveTask" where task != nil:
             
-            task?.name = taskTitleText.text!
-            let destination = segue.destination as! TasksTableController
+            task?.name = taskTitleText.text ?? ""
             destination.taskTableView.reloadData()
             
-        case "back2" where task == nil:
+        case "saveTask" where task == nil:
             
             let task = Task(name: taskTitleText.text!)
-            let destination = segue.destination as! TasksTableController
             destination.tasks.append(task)
-            
             
         default:
             print("ohhhhhh")
