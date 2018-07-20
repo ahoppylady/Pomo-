@@ -83,22 +83,15 @@ class TimeViewController: UIViewController {
     @objc func updateTimer() {
          
         if seconds < 1 {
-            
             PMSoundHelper.playSound(soundFile: "alarm")
-            
             if !isBreakTime {
-                
                 breakSetup()
-                
                 task?.pomoCount += 1
-
             } else {
-
                 pomoSetup()
             }
             
             timer.invalidate()
-            
         } else {
             seconds -= 1
             timerLabel.text = String(seconds)
@@ -136,5 +129,7 @@ class TimeViewController: UIViewController {
     func setupViews() {
         taskNameLabel.layer.cornerRadius = 8
         taskNameLabel.layer.masksToBounds = true
+        
+        timerLabel.layer.cornerRadius = timerLabel.frame.width/2
     }
 }
