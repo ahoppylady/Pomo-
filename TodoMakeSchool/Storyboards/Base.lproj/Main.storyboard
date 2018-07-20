@@ -275,6 +275,12 @@
                                         <date key="date" timeIntervalSinceReferenceDate="552602937.35161996">
                                             <!--2018-07-06 20:48:57 +0000-->
                                         </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="553773600">
+                                            <!--2018-07-20 10:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="585309600">
+                                            <!--2019-07-20 10:00:00 +0000-->
+                                        </date>
                                         <connections>
                                             <action selector="dueDatePicked:" destination="2QY-Tn-BYU" eventType="valueChanged" id="yzr-dB-xCc"/>
                                         </connections>
