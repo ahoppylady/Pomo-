@@ -71,9 +71,9 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
-            
+                
         case "startPomo":
-            
+
             if segue.destination is TimeViewController {
                 
                 let selectedIndex = taskTableView.indexPathForSelectedRow
@@ -86,12 +86,14 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
             
         case "yves":
         
-                let selectedIndex = taskTableView.indexPathForSelectedRow
-                guard let index = selectedIndex?.row else {return}
-                let selectedTask = tasks[index]
-                let dvc = segue.destination as? DisplayTaskViewController
-                dvc?.task = selectedTask
-            
+//                let selectedIndex = taskTableView.indexPathForSelectedRow
+//                guard let index = selectedIndex?.row else {return}
+//                let selectedTask = tasks[index]
+//                let dvc = segue.destination as? DisplayTaskViewController
+//                dvc?.task = selectedTask
+            guard let object = sender as? Task else { return }
+            let dvc = segue.destination as! DisplayTaskViewController
+            dvc.task = object
             
             
         default:
@@ -113,7 +115,7 @@ class TasksTableController: UIViewController, UITableViewDelegate, UITableViewDa
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
             // edit item at indexPath
             let taskSelected = self.tasks[indexPath.row]
-            
+            self.performSegue(withIdentifier: "yves", sender: taskSelected)
         }
         
         edit.backgroundColor = UIColor.blue

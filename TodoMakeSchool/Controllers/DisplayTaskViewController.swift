@@ -18,7 +18,16 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskTitleText.text = task?.name
+        
+        if let task = task {
+            
+            taskTitleText.text = task.name
+            
+        } else {
+            
+            taskTitleText.text = ""
+            
+        }
         
         //connect data
         self.categoryPicker.delegate = self
@@ -27,9 +36,12 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //initializing array of categories
         categoryPickerData = ["Home", "Work", "School", "Travel", "Self Care"]
         
+        //Dismiss Keyboard
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
         // hide back button
         //self.navigationItem.setHidesBackButton(true, animated:true)
-
+        
         self.navigationItem.backBarButtonItem?.title = "Tasks"
     }
     
@@ -55,28 +67,44 @@ class DisplayTaskViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
-        print("prepare segue")
-        if segue.identifier == "back2" {
+        
+        guard let identifier = segue.identifier,
+            let destination = segue.destination as? TasksTableController
+            else { return }
+        
+        switch identifier {
+            
+        case "back2" where task != nil:
+            
+            task?.name = taskTitleText.text!
+            let destination = segue.destination as! TasksTableController
+            destination.taskTableView.reloadData()
+            
+        case "back2" where task == nil:
+            
             let task = Task(name: taskTitleText.text!)
             let destination = segue.destination as! TasksTableController
             destination.tasks.append(task)
+            
+            
+        default:
+            print("ohhhhhh")
         }
     }
     
     @IBAction func taskSaveButtonTapped(_ sender: Any) {
-    
-        print("button")
+        
+        
         //add coreData elements to perform save activity
         //let task = Task(name: "Sneha")
         //let destination = segue.destination as! TasksTableController
         
         //destination.tasks.append(task)
-//        let a = self.navigationController?.viewControllers.last as! TasksTableController
-//        var array = a.tasks
-//        print("\(array)")
-//        array.append(task)
-//          print("\(array)")
-//        navigationController?.popViewController(animated: true)
+        //        let a = self.navigationController?.viewControllers.last as! TasksTableController
+        //        var array = a.tasks
+        //        print("\(array)")
+        //        array.append(task)
+        //          print("\(array)")
+        //        navigationController?.popViewController(animated: true)
     }
 }

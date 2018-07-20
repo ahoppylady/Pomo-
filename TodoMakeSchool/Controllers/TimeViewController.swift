@@ -6,6 +6,7 @@
 
 import UIKit
 import AVFoundation
+import QuartzCore
 
 class TimeViewController: UIViewController {
     
@@ -17,7 +18,7 @@ class TimeViewController: UIViewController {
     var task: Task?
     
     var seconds = 1500 //25 minutes
-    var timerDisplay = String(format:"%02i:%02i:%02i", 00, 25, 00)
+    var timerDisplay = String(format:"%02i:%02i", 25, 00)
     var timer = Timer()
     
     var isTimerRunning = false
@@ -28,9 +29,13 @@ class TimeViewController: UIViewController {
         
         super.viewDidLoad()
         setupViews()
+        
         pauseButton.isEnabled = false
         
-        timerLabel.text = timerDisplay
+        timerLabel.layer.masksToBounds = true
+        //timerLabel.layer.cornerRadius = timerLabel.frame.width/2
+        //timerLabel.text = timerDisplay
+        
         taskNameLabel.text = task?.name
     }
     
@@ -76,7 +81,7 @@ class TimeViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        
+         
         if seconds < 1 {
             
             PMSoundHelper.playSound(soundFile: "alarm")
